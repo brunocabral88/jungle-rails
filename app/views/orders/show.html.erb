@@ -6,7 +6,7 @@
 
   <div class="order-summary jumbotron">
     <h3>Thank you for your order, please review your data and purchased items </h3><br>
-    <h4>Email: <%= @order.email %></h4><br>
+    <h4><%= "Email: #{@order.email}" if @order.email %></h4><br>
     <table class="table orders-table">
       <thead>
         <tr>
