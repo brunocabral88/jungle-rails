@@ -1,0 +1,7 @@
+<tr>
+  <td><%= image_tag item.product.image.thumb, class: "order-item-img" %></td>
+  <td><%= link_to item.product.name, item.product %></td>
+  <td><%= item.product.description %></td>
+  <td align="center"><%= item.quantity %></td>
+  <td><%= number_to_currency Float(item.total_price_cents/100) %></td>
+</tr>

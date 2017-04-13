@@ -1,0 +1,17 @@
+table.orders-table {
+  border: 1px solid white;
+  width: 100%;
+  th {
+    height:70px;
+  }
+  td {
+    padding:5px 10px;
+  }
+  tr:nth-child(even) {
+    background-color: white;
+  }
+  img.order-item-img {
+    width: 80px;
+    height: 80px;
+  }
+}

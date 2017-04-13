@@ -5,7 +5,30 @@
   </header>
 
   <div class="order-summary jumbotron">
-    <h4>Thank you for your order!</h4>
+    <h3>Thank you for your order, please review your data and purchased items </h3><br>
+    <h4>Email: <%= @order.email %></h4><br>
+    <table class="table orders-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Product</th>
+          <th>Description</th>
+          <th>Quantity</th>
+          <th>Unit Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @order.line_items.each do |item| %>
+          <%= render "order_item", item: item %>
+        <% end %>
+        <tr>
+          <td colspan="3"></td>
+          <td><strong>Total</strong></td>
+          <td><%= number_to_currency Float(@order.total_cents / 100) %></td>
+        </tr>
+      </tbody>
+    </table>
+    
   </div>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
