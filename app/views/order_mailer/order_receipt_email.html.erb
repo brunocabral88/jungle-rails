@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h2>Thanks for choosing Jungle.com,</h2>
+    <p>
+      Your order has been received and will be delivered to you soon.
+      Please review below your order details:
+      <table>
+        <thead>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Item total</th>
+        </thead>
+        <tbody>
+          <% @order.line_items.each do |item| %>
+            <tr>
+              <td><%= item.product.name %></td>
+              <td align="center"><%= item.quantity %></td>
+              <td><%= number_to_currency Float(item.total_price_cents/100) %></td>
+            </tr>
+          <% end %>
+          <tr>
+            <td colspan="1"></td>
+            <td><strong>Total</strong></td>
+            <td><%= number_to_currency Float(@order.total_cents/100) %></td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </p>
+  </body>
+</html>
