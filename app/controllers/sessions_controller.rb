@@ -8,8 +8,10 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:user][:password])
       session[:user_id] = user.id
       session[:user_admin] = user.admin
+      flash[:success] = "Logged in as #{user.email}"
       redirect_to root_path
     else
+      flash[:danger] = "Could not login with the provided info"
       redirect_to login_path
     end
   end
@@ -17,6 +19,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil unless !session[:user_id]
     session[:user_admin] = nil unless !session[:user_admin]
+    flash[:info] = "Logged out successfully!"
     redirect_to root_path
   end
 

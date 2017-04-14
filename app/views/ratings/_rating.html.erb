@@ -3,4 +3,7 @@
   <dt>Rating:</dt><dd> <%= rating.rating %></dd>
   <dt>Comment:</dt><dd> <%= rating.description %></dd>
   <dt>Date:</dt><dd> <%= rating.created_at %></dd>
+  <% if current_user == rating.user %>
+    <%= link_to "Delete", [rating.product, rating], method: :delete, class: 'btn btn-danger' %>
+  <% end %>
 </div>
