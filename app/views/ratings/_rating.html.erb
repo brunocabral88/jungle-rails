@@ -2,8 +2,12 @@
   <dt>Name:</dt><dd><%= "#{rating.user.first_name} #{rating.user.last_name}" %></dd>
   <dt>Rating:</dt><dd> <%= rating.rating %></dd>
   <dt>Comment:</dt><dd> <%= rating.description %></dd>
-  <dt>Date:</dt><dd> <%= rating.created_at %></dd>
-  <% if current_user == rating.user %>
+  <dt>Date:</dt>
+  <dd>
+   <%= rating.created_at %>
+   <% if current_user == rating.user %>
     <%= link_to "Delete", [rating.product, rating], method: :delete, class: 'btn btn-danger' %>
-  <% end %>
+   <% end %>
+  </dd>
+  
 </div>
