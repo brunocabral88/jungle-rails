@@ -24,8 +24,14 @@
           <dd><%= @product.price %></dd>
         </dl>
       </div>
+      <div class="col-sm-8 product-ratings">
+        <dl class="dl-horizontal">
+          <h4><%= pluralize(@product.ratings.size,"Rating") %></h4>
+          <%= render @product.ratings %>
+        </dl>
+      </div>
     </div>
-
+    
   </article>
 
 </section>

@@ -133,12 +133,12 @@ cat3.products.create!({
 })
 
 1.upto(10) do
-  full_name = Faker::StarWars.character
-  User.create({
-    first_name: full_name.split(" ")[0],
-    last_name: full_name.split(" ")[1],
+  User.create!({
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
-    password_digest: BCrypt::Password.create("password"),
+    password: "password",
+    password_confirmation: "password",
     admin: false
   })
 end
