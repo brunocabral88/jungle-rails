@@ -132,5 +132,26 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+1.upto(10) do
+  full_name = Faker::StarWars.character
+  User.create({
+    first_name: full_name.split(" ")[0],
+    last_name: full_name.split(" ")[1],
+    email: Faker::Internet.email,
+    password_digest: BCrypt::Password.create("password"),
+    admin: false
+  })
+end
+
+products_size = Product.all.size
+users_size = User.all.size
+1.upto(30) do
+  Rating.create!({
+    product_id: rand(products_size - 1) + 1, 
+    user_id: rand(users_size - 1) + 1, 
+    description: Faker::StarWars.quote,
+    rating: rand(4) + 1
+  })
+end
 
 puts "DONE!"
