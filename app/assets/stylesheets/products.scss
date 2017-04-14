@@ -77,7 +77,9 @@ main section.categories-show {
 }
 
 main section.products-show {
-
+  div.product-ratings h4:first {
+    margin-left: 50px;
+  }
   .product-detail {
     img.main-img {
       max-width: 100%;

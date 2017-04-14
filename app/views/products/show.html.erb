@@ -27,8 +27,23 @@
       <div class="col-sm-8 product-ratings">
         <dl class="dl-horizontal">
           <h4><%= pluralize(@product.ratings.size,"Rating") %></h4>
-          <%= render @product.ratings %>
+          <%=  render@product.ratings.order(created_at: :desc) %>
         </dl>
+        <div class="col-sm-8 col-sm-offset-2">
+          <h4>Send a review</h4>
+          <%= form_for [@product, @rating] do |f| %>
+            <div class="form-group">
+              <%= f.label :rating %>
+              <%= f.select :rating,options_for_select([[1,1],[2,2],[3,3],[4,4],[5,5]]), class: 'form-control'  %>
+            </div>
+            <div class="form-group">
+              <%= f.label :description %>
+              <%= f.text_area :description, class: 'form-control' %>
+            </div>
+            <%= f.submit "Send review", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+        
       </div>
     </div>
     
