@@ -4,8 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:user][:email])
-    if user && user.authenticate(params[:user][:password])
+    if user = User.authenticate_with_credentials(params[:user][:email],params[:user][:password])
       session[:user_id] = user.id
       session[:user_admin] = user.admin
       flash[:success] = "Logged in as #{user.email}"
