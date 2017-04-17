@@ -1,8 +1,8 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
-Live at: https://young-ravine-27027.herokuapp.com/
-This was part of the exercises of the Lighthouse Labs Web development bootcamp.
+A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.  
+Live at: https://young-ravine-27027.herokuapp.com/  
+This was part of the exercises of the Lighthouse Labs Web development bootcamp.  
 
 ## Contributions to this repo
 1. Create login page
