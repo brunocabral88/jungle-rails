@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
 
     if order.valid?
       empty_cart!
-      UserMailer.order_receipt_email(order).deliver_now if Rails.env.production?
+      OrderMailer.order_receipt_email(order).deliver_now
       flash[:success] = 'Your Order has been placed.'
       redirect_to order
     else
