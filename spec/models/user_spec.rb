@@ -68,20 +68,20 @@ RSpec.describe User, type: :model do
 
     it "should return true for a valid login/password" do
       @user.save
-      authenticated = User.authenticate_with_credentials("bruno@bruno.com","123123")
-      expect(authenticated).to be true
+      user = User.authenticate_with_credentials("bruno@bruno.com","123123")
+      expect(user).to eq(@user)
     end
 
     it "should authenticate with uppercase emails" do
       @user.save
-      authenticated = User.authenticate_with_credentials("BruNo@bruno.com","123123")
-      expect(authenticated).to be true
+      user = User.authenticate_with_credentials("BruNo@bruno.com","123123")
+      expect(user).to eq(@user)
     end
 
     it "should authenticate with leading blank spaces in email address" do
       @user.save
-      authenticated = User.authenticate_with_credentials("   bruno@bruno.com","123123")
-      expect(authenticated).to be true
+      user = User.authenticate_with_credentials("   bruno@bruno.com","123123")
+      expect(user).to eq(@user)
     end
 
   end
