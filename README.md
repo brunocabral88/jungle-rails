@@ -1,7 +1,19 @@
 # Jungle
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+Live at: https://young-ravine-27027.herokuapp.com/
+This was part of the exercises of the Lighthouse Labs Web development bootcamp.
 
+## Contributions to this repo
+1. Create login page
+2. Create the sold-out badge when product expired
+3. Implemented TDD with RSpec
+4. Enforce being an admin to access admin pages
+5. Creation of User model and validations
+6. View/edit pages for Products/Categories
+7. Implementation of products reviews 
+8. Send an email when order is complete using ActionMailer
+9. My Cart page shows custom message when cart is empty
 
 ## Setup
 
